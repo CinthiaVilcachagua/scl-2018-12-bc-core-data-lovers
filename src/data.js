@@ -1,8 +1,7 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-const example = () => {
-  return 'example';
+const filterData = (data, condition) => {
+  return data.filter(element => (element.indicatorCode.indexOf(condition) !== -1));
 };
 
-window.example = example;
+window.worldbank = {
+  filterData,
+};
