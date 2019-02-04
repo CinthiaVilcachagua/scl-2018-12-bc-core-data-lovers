@@ -2,10 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>World Bank</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="../images/worldbank-minilogo.ico.png">
   </head>
   <body>
+    <header> 
+      <img id="logo"  src="../images/worldbank-logo.png" alt="logo de la página"/>
+      <nav>
+        <a href="#page2" id="sectores-page"> SECTORES </a> 
+        <a href="#page-buscador" id="search-page" > &#128270; BUSCADOR </a>
+      </nav>
+    </header>
+    <main>
+      <section id="page1">
+        <div id="carousel-images"></div>
+        <div>
+          <h2>Bienvenido a worldbank</h2>
+          <p>Worldbank es </p>
+          <button id="btn-sectores">Conocer la data</button>
+        </div>
+      </section>
+      <section id="page2">
+        <select name="select" id="select-pais">
+          <option value="BRA">Brasil</option>
+          <option value="CHL">Chile</option>
+          <option value="MEX">Mexico</option>
+          <option value="PER" selected>Perú</option>
+        </select>
+        
+        <select name="select" id="select-sector">
+          <option value="SP">Sector Poblacion</option>
+          <option value="SL" selected>Sector Laboral</option>
+          <option value="SH">Sector Salud</option>
+          <option value="SE">Sector Educación</option>
+          <option value="IC">Sector Comercial</option>
+          <option value="SG">Sector Género</option>
+          <option value="per">Sec. Programas Soc.</option>
+          <option value="HD">Sector Capital Hum.</option>
+          <option value="MS">Sector Militar</option>
+          <option value="DT">Flujo Oficial (ONU)</option>
+        </select>
+        <button id="btn-indicators"> MOSTRAR INDICADORES </button>
+        <div id="sectores">
+            <p id="name-sector"></p>
+        </div>
+        <div id="list-indicator"> </div>
+      </section>
+    </main>
     <div id="root"></div>
     <script src="./data/worldbank/worldbank.js"></script> 
     <script src="data.js"></script>
