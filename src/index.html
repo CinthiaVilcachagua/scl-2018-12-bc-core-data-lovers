@@ -19,20 +19,21 @@
         <div id="carousel-images"></div>
         <div>
           <h2>Bienvenido a worldbank</h2>
-          <p>Worldbank es </p>
+          <p>Worldbank es la base de datos que contiene estadísticas nacionales e internacionales sobre los indicadores de Desarrollo.</p>
           <button id="btn-sectores">Conocer la data</button>
         </div>
       </section>
       <section id="page2">
+        <h2>INDICADORES POR SECTORES Y PAÍSES</h2>
         <select name="select" id="select-pais">
           <option value="BRA">Brasil</option>
           <option value="CHL">Chile</option>
           <option value="MEX">Mexico</option>
           <option value="PER" selected>Perú</option>
         </select>
-        
+      
         <select name="select" id="select-sector">
-          <option value="SP">Sector Poblacion</option>
+          <option value="SP">Sector Población</option>
           <option value="SL" selected>Sector Laboral</option>
           <option value="SH">Sector Salud</option>
           <option value="SE">Sector Educación</option>
@@ -49,7 +50,51 @@
         </div>
         <div id="list-indicator"> </div>
       </section>
+
+      <section id="page3">
+        <h2 id="indicator-selected">GRÁFICO</h2>
+        <div id="graficos">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <h2>TABLA DE DATOS</h2>
+        <table>
+          <tr>
+            <td>PAÍS</td>
+            <td>
+                <select name="" id="year1"></select>
+            </td>
+            <td>
+                <select name="" id="year2"></select>
+            </td>
+            <td>Estadística</td>
+          </tr>
+          <tr>
+            <td id="country-selected"></td>
+            <td id="year-data1"></td>
+            <td id="year-data2"></td>
+            <td id="estadística"></td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="page-buscador">
+        <h2>BUSCADOR DE INDICADORES</h2>
+        <input type="text" value="" placeholder="ejemplo: mujer" id="buscador">
+        <select name="select" id="select-order">
+          <option value="ascendente">ASC. (A-Z)</option>
+          <option value="descendente">DESC. (Z-A)</option>
+        </select>
+        <select name="select" id="select-country">
+            <option value="BRA">Brasil</option>
+            <option value="CHL">Chile</option>
+            <option value="MEX">Mexico</option>
+            <option value="PER" selected>Perú</option>
+          </select>
+        <button id="btn-buscar">BUSCAR</button>
+        <div id="indicator-search"></div>
+      </section>
     </main>
+    <footer> <p>©Copyright 2050 by nobody. All rights reversed.</p> </footer>
     <div id="root"></div>
     <script src="./data/worldbank/worldbank.js"></script> 
     <script src="data.js"></script>

@@ -1,62 +1,73 @@
 body {
-    background : url(../images/mapamundi.png);
-   }
-  header {
-    background-color:#FFFFFF;
-    height: 100px ;
-   }
-  #logo {
-    height: 80px;
-   }
-  nav {
-    display: inline-block;
-    align-items: right;
-    margin-top: 2%;
-    margin-right: 2%;
-   }
-    nav a{
-     margin:0;
-     padding: 0.5rem 1rem;
-     transition: all 0.4s linear;
-     border-radius: 5px;
-     text-decoration: none;
-     font-weight: bold;
-     background-color: #60AFDF;
-     color: #000000;
-     margin-right: 5%;
-    }
-       nav a:hover {
-         background: #217CB3;
-         color: #FFFFFF;
-       }
-  
-  .ocultar {
-     display: none;
-   } 
-  .visible {
-     display: block;
-   }
-  /* -- PÁGINA 1 -- */  
-  button {
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    background-color: #60AFDF;
-    color: #000000;
-    height: 30px;
-   }
-  /* -- PÁGINA 2 -- */
-  select {
-    border-radius: 5px;
-   }
-  
-  #name-sector {
-    font-weight: bold;
-    border-radius: 15px;
-    background-color: rgba(255,255,255, 0.8);
-   }
-  
-  #list-indicator {
-    background-color: rgba(255,255,255, 0.8);
-    border-radius: 15px;
-   }
+  background : url(../images/mapamundi.png);
+ }
+header {
+  background-color:#FFFFFF;
+  height: 100px ;
+ }
+#logo {
+  height: 80px;
+ }
+nav {
+  display: inline-block;
+  align-items: right;
+  margin-top: 2%;
+  margin-right: 2%;
+ }
+  nav a{
+   margin:0;
+   padding: 0.5rem 1rem;
+   transition: all 0.4s linear;
+   border-radius: 5px;
+   text-decoration: none;
+   font-weight: bold;
+   background-color: #60AFDF;
+   color: #000000;
+   margin-right: 5%;
+  }
+     nav a:hover {
+       background: #217CB3;
+       color: #FFFFFF;
+     }
+
+.ocultar {
+   display: none;
+ } 
+.visible {
+   display: block;
+ }
+/* -- PÁGINA 1 -- */  
+.container-principal{
+  background-color: rgba(255,255,255, 0.8);
+  max-width: 460px;
+  border-radius: 100px;
+  height: auto;
+  margin: 3% 5%;
+  padding-bottom: 1rem;
+}
+
+button {
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  background-color: #60AFDF;
+  color: #000000;
+  height: 30px;
+ }
+/* -- PÁGINA 2 -- */
+select {
+  border-radius: 5px;
+ }
+
+#name-sector {
+  font-weight: bold;
+  border-radius: 15px;
+  background-color: rgba(255,255,255, 0.8);
+ }
+
+#list-indicator {
+  background-color: rgba(255,255,255, 0.8);
+  border-radius: 15px;
+ }
+
+/* -- PÁGINA 3 -- */
