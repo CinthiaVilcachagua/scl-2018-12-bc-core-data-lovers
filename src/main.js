@@ -97,6 +97,15 @@ btnIndicator.addEventListener('click', () => {
             dataYear2.innerHTML = yearData2;
          }
          year2.addEventListener('change',funcionQueMeGuardeElSelect2);
+
+         //GRAFICO 
+         const years = Object.keys(objectIndicator.data);
+         const yearsFilter = years.filter(element => (objectIndicator.data[element] !== ''));
+         console.log(yearsFilter);
+         
+         const arrayDataYears = yearsFilter.map(a => objectIndicator.data[a]);
+         graphics(yearsFilter, arrayDataYears, indicatorElement );
+         
       })
    })
 });
@@ -136,3 +145,37 @@ btnBuscar.addEventListener('click', () => {
   });
   listIndicatorSearch.innerHTML = indicatorSearch;
 });
+
+//crear grafico//
+let myChart;
+const graphics = (var1, var2, indicador) => {
+   const ctx = document.getElementById("myChart").getContext('2d');
+   if (myChart) {
+      myChart.destroy();
+   }
+       myChart = new Chart(ctx, {
+          type: 'line',
+            data: {
+             labels: var1,
+             datasets: [
+               {
+              label: indicador,
+               data: var2,
+               fill: false,
+               lineTension: 0.1,
+               borderColor: 'red'
+               },
+             ],
+            },
+          options: {
+           responsive: false,
+           scales: {
+             yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+             }]
+            }
+          }
+        });
+}

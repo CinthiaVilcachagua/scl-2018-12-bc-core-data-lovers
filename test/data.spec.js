@@ -530,7 +530,7 @@ const inputFilter = [
     "indicatorCode": "SH.ANM.ALLW.ZS"
   },
 ];  
-
+const filterBy = 'indicatorCode';
 const sectorSelect = 'SL';
 const outputFilter = [
   {
@@ -864,7 +864,6 @@ const outputFilter = [
     "indicatorCode": "SL.TLF.CACT.NE.ZS"
   },
 ];
-
 const sortBy = 'indicatorName';
 const sortOrder = 'descendente';
 const outputSort = [
@@ -1198,8 +1197,8 @@ const outputSort = [
   "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
   "indicatorCode": "SL.TLF.PART.FE.ZS"
 },
-
 ];
+
 
 describe('worldbank', () => {
 
@@ -1212,7 +1211,7 @@ describe('worldbank', () => {
      expect(typeof window.worldbank.filterData).toBe('function');
    });
    it('deberia retornar un array con los indicadores filtrados por Sector', () => {
-     expect(window.worldbank.filterData(inputFilter, sectorSelect)).toEqual(outputFilter);
+     expect(window.worldbank.filterData(inputFilter,filterBy, sectorSelect)).toEqual(outputFilter);
    });
   });
 
@@ -1225,3 +1224,4 @@ describe('worldbank', () => {
     });
   });
 });
+ 
