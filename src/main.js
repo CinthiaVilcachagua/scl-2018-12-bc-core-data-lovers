@@ -101,7 +101,6 @@ btnIndicator.addEventListener('click', () => {
          //GRAFICO 
          const years = Object.keys(objectIndicator.data);
          const yearsFilter = years.filter(element => (objectIndicator.data[element] !== ''));
-         console.log(yearsFilter);
          
          const arrayDataYears = yearsFilter.map(a => objectIndicator.data[a]);
          graphics(yearsFilter, arrayDataYears, indicatorElement );
