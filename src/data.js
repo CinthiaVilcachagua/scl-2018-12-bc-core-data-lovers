@@ -1,6 +1,6 @@
-const filterData = (data, condition) => {
-  return data.filter(element => (element.indicatorCode.indexOf(condition) !== -1));
-};
+const filterData = (data, filterBy ,condition) => {
+   return data.filter(element => (element[filterBy].indexOf(condition) !== -1));
+ };
 
 const sortData = (data, sortBy, sortOrder) => {
   const indicatorsSorts = data.sort((a,b) => { 
