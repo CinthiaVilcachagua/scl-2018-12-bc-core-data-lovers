@@ -3,39 +3,41 @@ const btnSectoresPage = document.getElementById('sectores-page');
 const searchPage = document.getElementById('search-page');
 document.getElementById('page2').setAttribute('class', 'ocultar');
 document.getElementById('page3').setAttribute('class', 'ocultar');
-const btnIndicator = document.getElementById('btn-indicators');
 document.getElementById('page-buscador').setAttribute('class', 'ocultar');
+const btnIndicator = document.getElementById('btn-indicators');
 /* -- DOM DE LA PAGINA 1 -- */
+
 const loadIndicators = () => {
-    document.getElementById('page1').setAttribute('class', 'ocultar');
-    document.getElementById('page-buscador').setAttribute('class', 'ocultar');
-    document.getElementById('page2').setAttribute('class', 'visible');
-    document.getElementById('page3').setAttribute('class', 'ocultar');
- };
- /* -- DOM DE LA PAGINA 3 --*/
+   document.getElementById('page1').setAttribute('class', 'ocultar');
+   document.getElementById('page-buscador').setAttribute('class', 'ocultar');
+   document.getElementById('page2').setAttribute('class', 'visible');
+   document.getElementById('page3').setAttribute('class', 'ocultar');
+};
+/* -- DOM DE LA PAGINA 3 --*/
 //crear foreach para los select con los años.
 const functionYearsSelect = (data) => {
-   const arrayYears = [];
-   for (let i = 1960; i <= 2017; i++) {
-   arrayYears.push(i);
-   }
-   const selectYear1 = document.getElementById('year1');
-   const selectYear2 = document.getElementById('year2');
-   let yearsListReverse = '';
-   let yearsList = '';
-   arrayYears.forEach((year) => {
-      const yearSelect = ` 
-       <option value="${year}"> ${year} </option>
-      `;
-      if (data[year] !== '') {
-         yearsList += yearSelect; //orden
-         yearsListReverse = yearSelect + yearsListReverse; //invirtiendo el orden
-      } 
-   });
-   selectYear1.innerHTML = yearsList;
-   selectYear2.innerHTML = yearsListReverse;
-   
-};
+         const arrayYears = [];
+         for (let i = 1960; i <= 2017; i++) {
+         arrayYears.push(i);
+         }
+         const selectYear1 = document.getElementById('year1');
+         const selectYear2 = document.getElementById('year2');
+         let yearsListReverse = '';
+         let yearsList = '';
+         arrayYears.forEach((year) => {
+            const yearSelect = ` 
+             <option value="${year}"> ${year} </option>
+            `;
+            if (data[year] !== '') {
+               yearsList += yearSelect; //orden
+               yearsListReverse = yearSelect + yearsListReverse; //invirtiendo el orden
+            } 
+         });
+         selectYear1.innerHTML = yearsList;
+         selectYear2.innerHTML = yearsListReverse;
+         
+      };
+
 /* -- DOM DE LA PAGINA 2 -- */
 btnIndicator.addEventListener('click', () => {
    const selectCountry = document.getElementById('select-pais');
@@ -100,18 +102,18 @@ btnIndicator.addEventListener('click', () => {
 
          //GRAFICO 
          const years = Object.keys(objectIndicator.data);
-         const yearsFilter = years.filter(element => (objectIndicator.data[element] !== ''));
-         
+         const yearsFilter = years.filter(element => (objectIndicator.data[element] !== ''));        
          const arrayDataYears = yearsFilter.map(a => objectIndicator.data[a]);
          graphics(yearsFilter, arrayDataYears, indicatorElement );
          
       })
    })
 });
- btnSectores.addEventListener('click',loadIndicators);
- btnSectoresPage.addEventListener('click', loadIndicators);
+btnSectores.addEventListener('click',loadIndicators);
+btnSectoresPage.addEventListener('click', loadIndicators);
 
- /* -- DOM DEL BUSCADOR -- */
+
+/* -- DOM DEL BUSCADOR -- */
 
 const btnBuscar = document.getElementById('btn-buscar');
 // solo mostrar la opcion buscar
