@@ -133,7 +133,7 @@ AGREGAMOS PANTALLA DE BIENVENIDA
 <img src="./README-IMG/Pantalla-buscador.jpg" alt="pantalla-buscador" style="max-width:80%">
 
 INCORPORAMOS UN GRAFICO CON CHART.JS POR CADA INDICADOR.
-<img src= "" alt="Graficos" style="max-width:80%">
+<img src= "./README-IMG/grafico-charts.png" alt="Graficos" style="max-width:80%">
 
 #### Testeos de usabilidad
 
