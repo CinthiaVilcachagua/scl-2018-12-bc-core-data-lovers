@@ -1199,6 +1199,9 @@ const outputSort = [
 },
 ];
 
+const num1 = 11.05;
+const num2 = "20.05";
+const outputComputeStas = -9 ;
 
 describe('worldbank', () => {
 
@@ -1219,8 +1222,20 @@ describe('worldbank', () => {
     it('deberia ser una función', () => {
       expect(typeof window.worldbank.sortData).toBe('function');
     });
-    it('deberia retornar un array con los indicadores ordenados según el orden requerido', () => {
-      expect(window.worldbank.sortData(outputFilter, sortBy, sortOrder)).toEqual(outputSort);
+    it('deberia retornar un array con los indicadores ordenados de la A-Z', () => {
+      expect(window.worldbank.sortData(outputFilter, sortBy, sortOrder1)).toEqual(outputSort1);
+    })
+    it('deberia retornar un array con los indicadores ordenados de la Z-A', () => {
+      expect(window.worldbank.sortData(outputFilter, sortBy, sortOrder2)).toEqual(outputSort2);
+    });
+  
+  });
+  describe('worldbank.computeStats', () => {
+    it('deberia ser una función', () => {
+      expect(typeof window.worldbank.computeStats).toBe('function');
+    });
+    it('deberia retornar la diferencia de los 2 numeros dados', () => {
+      expect(window.worldbank.computeStats(num1, num2).toEqual(outputComputeStas));
     });
   });
 });

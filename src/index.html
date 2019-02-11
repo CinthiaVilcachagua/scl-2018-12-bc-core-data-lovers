@@ -3,99 +3,120 @@
   <head>
     <meta charset="utf-8">
     <title>World Bank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="../images/worldbank-minilogo.ico.png">
   </head>
   <body>
     <header> 
-      <img id="logo"  src="../images/worldbank-logo.png" alt="logo de la página"/>
-      <nav>
-        <a href="#page2" id="sectores-page"> SECTORES </a> 
-        <a href="#page-buscador" id="search-page" > &#128270; BUSCADOR </a>
-      </nav>
+      <div class="contenedor">
+        <h1><img src="../images/worldbank-minilogo.ico.png"> World Bank Lat</h1>
+        <input type="checkbox" id="menu-bar">
+        <label class="icon-menu" for="menu-bar"><img src="../images/menu-bar.png"></label>
+        <nav class="menu">
+          <a href="#page2" id="sectores-page"> SECTORES </a> 
+          <a href="#page-buscador" id="search-page" > &#128270; BUSCADOR </a>
+        </nav>
+      </div>
     </header>
+
     <main>
-      <section id="page1">
-        <div class="container-principal">
-          <h1>Bienvenido a worldbank</h1>
+      <section id="banner">
+        <img src="../images/sector-educacion.jpg" alt="imagen de un niño en educación">
+        <div class="contenedor">
+          <h2>Bienvenido a worldbank</h2>
           <p>Worldbank es la base de datos que contiene estadísticas nacionales e internacionales sobre los indicadores de Desarrollo.</p>
           <button id="btn-sectores">INDICADORES</button>
         </div>
       </section>
+
       <section id="page2">
-        <h2>INDICADORES POR SECTORES Y PAÍSES</h2>
-        <select name="select" id="select-pais">
-          <option value="BRA">Brasil</option>
-          <option value="CHL">Chile</option>
-          <option value="MEX">Mexico</option>
-          <option value="PER" selected>Perú</option>
-        </select>
-      
-        <select name="select" id="select-sector">
-          <option value="SP">Sector Población</option>
-          <option value="SL" selected>Sector Laboral</option>
-          <option value="SH">Sector Salud</option>
-          <option value="SE">Sector Educación</option>
-          <option value="IC">Sector Comercial</option>
-          <option value="SG">Sector Género</option>
-          <option value="per">Sec. Programas Soc.</option>
-          <option value="HD">Sector Capital Hum.</option>
-          <option value="MS">Sector Militar</option>
-          <option value="DT">Flujo Oficial (ONU)</option>
-        </select>
-        <button id="btn-indicators"> MOSTRAR INDICADORES </button>
-        <div id="sectores">
-            <p id="name-sector"></p>
+        <div id="banner2">
+          <img src= "../images/sector-poblacion.jpg" alt="imagen de una mamá y su hija">
         </div>
-        <div id="list-indicator"> </div>
-      </section>
-
-      <section id="page3">
-        <h2 id="indicator-selected">GRÁFICO</h2>
-        <div id="graficos">
-          <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
-        <h2>TABLA DE DATOS</h2>
-        <table>
-          <tr>
-            <td>PAÍS</td>
-            <td>
-                <select name="" id="year1"></select>
-            </td>
-            <td>
-                <select name="" id="year2"></select>
-            </td>
-            <td>Estadística</td>
-          </tr>
-          <tr>
-            <td id="country-selected"></td>
-            <td id="year-data1"></td>
-            <td id="year-data2"></td>
-            <td id="estadística"></td>
-          </tr>
-        </table>
-      </section>
-
-      <section id="page-buscador">
-        <h2>BUSCADOR DE INDICADORES</h2>
-        <input type="text" value="" placeholder="ejemplo: mujer" id="buscador">
-        <select name="select" id="select-order">
-          <option value="ascendente">ASC. (A-Z)</option>
-          <option value="descendente">DESC. (Z-A)</option>
-        </select>
-        <select name="select" id="select-country">
+        <div class="contenedor">
+          <h2>INDICADORES POR SECTORES Y PAÍSES</h2>
+          <select name="select" id="select-pais">
             <option value="BRA">Brasil</option>
             <option value="CHL">Chile</option>
             <option value="MEX">Mexico</option>
             <option value="PER" selected>Perú</option>
           </select>
-        <button id="btn-buscar">BUSCAR</button>
-        <div id="indicator-search"></div>
+      
+          <select name="select" id="select-sector">
+            <option value="SP">Sector Población</option>
+            <option value="SL" selected>Sector Laboral</option>
+            <option value="SH">Sector Salud</option>
+            <option value="SE">Sector Educación</option>
+            <option value="IC">Sector Comercial</option>
+            <option value="SG">Sector Género</option>
+            <option value="per">Sec. Programas Soc.</option>
+            <option value="HD">Sector Capital Hum.</option>
+            <option value="MS">Sector Militar</option>
+            <option value="DT">Flujo Oficial (ONU)</option>
+          </select>
+          <button id="btn-indicators"> MOSTRAR INDICADORES </button>
+          <div id="sectores">
+            <p id="name-sector"></p>
+          </div>
+          <div id="list-indicator"> </div>
+        </div>
+      </section>
+
+      <section id="page3">
+        <div class="contenedor">
+        <h2 id="indicator-selected">GRÁFICO</h2>
+        <div id="graficos">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <h2>TABLA DE DATOS</h2>
+          <table>
+            <tr>
+              <td>PAÍS</td>
+              <td>
+                <select name="" id="year1"></select>
+              </td>
+              <td>
+                <select name="" id="year2"></select>
+              </td>
+              <td>Estadística</td>
+            </tr>
+            <tr>
+              <td id="country-selected"></td>
+              <td id="year-data1"></td>
+              <td id="year-data2"></td>
+              <td id="estadística"></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="page-buscador">
+        <img src="../images/mapa-azul.jpg" alt="mapamundi color gris">
+        <div class="contenedor">
+          <h2>BUSCADOR DE INDICADORES</h2>
+          <input type="text" value="" placeholder="ejemplo: mujer" id="buscador">
+          <select name="select" id="select-order">
+            <option value="ascendente">ASC. (A-Z)</option>
+            <option value="descendente">DESC. (Z-A)</option>
+          </select>
+          <select name="select" id="select-country">
+              <option value="BRA">Brasil</option>
+              <option value="CHL">Chile</option>
+              <option value="MEX">Mexico</option>
+              <option value="PER" selected>Perú</option>
+          </select>
+          <button id="btn-buscar"> BUSCAR </button>
+          <div id="indicator-search"></div>
+        </div>
       </section>
     </main>
-    <footer> <p>©Copyright 2050 by nobody. All rights reversed.</p> </footer>
+
+    <footer> 
+      <p class="copy" > World Bank Lat &copy; 2019</p> 
+    </footer>
     <div id="root"></div>
-    <script src="Chart.js"></script>
+    <script src="Chart.js"></script> 
     <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>

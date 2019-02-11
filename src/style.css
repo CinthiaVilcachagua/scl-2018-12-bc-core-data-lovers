@@ -1,73 +1,267 @@
-body {
-  background : url(../images/mapamundi.png);
- }
-header {
-  background-color:#FFFFFF;
-  height: 100px ;
- }
-#logo {
-  height: 80px;
- }
-nav {
-  display: inline-block;
-  align-items: right;
-  margin-top: 2%;
-  margin-right: 2%;
- }
-  nav a{
-   margin:0;
-   padding: 0.5rem 1rem;
-   transition: all 0.4s linear;
-   border-radius: 5px;
-   text-decoration: none;
-   font-weight: bold;
-   background-color: #60AFDF;
-   color: #000000;
-   margin-right: 5%;
-  }
-     nav a:hover {
-       background: #217CB3;
-       color: #FFFFFF;
-     }
+@import url('https://fonts.googleapis.com/css?family=Niramit');
 
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
+
+body {
+  font-family: 'Niramit', sans-serif;
+}
+
+header {
+  width:100%;
+  height: 50px;
+  background-color:#D6EAF8;
+  color: #000000;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 100;
+}
+.contenedor{
+  width:98%;
+  margin: auto;
+}
+
+header .contenedor{
+  display: table; /* para que no tape parte del contenedor */
+}
+
+h1{
+  float: left;
+}
+
+h1 img {
+  height: 35px; 
+}
+
+
+/* HACIENDO EL MENU */
+#menu-bar {
+  display:none;
+}
+
+header label{
+  float: right;
+  font-size:28px;
+  margin: 6px 0;
+}
+
+.menu{
+  position: absolute;
+  top:50px; /* para que comience desde abajo */
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(57, 79, 83, 0.9);
+  transition: all 0.5s;
+  transform: translatex(-100%);
+}
+
+.menu a{
+  display: block;
+  color: #fff;
+  height: 50px;
+  text-decoration: none;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255, 0.5);
+}
+
+.menu a:hover {
+  background: rgba(255,255,255, 0.3);
+}
+
+#menu-bar:checked ~ .menu { /* (pseudoclase)cuando se haga checked en el menu bar estare seleccionando el menu */
+  transform: translatex(0%);
+}
+  
 .ocultar {
    display: none;
  } 
 .visible {
    display: block;
  }
-/* -- PÁGINA 1 -- */  
-.container-principal{
+
+/* -- PÁGINA 1 -- */ 
+
+section {
+  width: 100%;
+}
+
+#banner {
+  margin-top: 50px;
+  position: relative;
+}
+
+#banner img{
+  width: 100%;
+  height: 100%;
+}
+
+#banner .contenedor{
+  border-radius:15px;
+  padding: 15px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  background-color: rgba(255,255,255, 0.5);
+}
+
+#banner h2 {
+  font-size: 30px;
+}
+
+/*.container-principal{
   background-color: rgba(255,255,255, 0.8);
   max-width: 460px;
   border-radius: 100px;
   height: auto;
   margin: 3% 5%;
   padding-bottom: 1rem;
+} */
+#banner button {
+  margin-top: 20px;
+}
+
+#banner button:hover {
+  background: rgba(80, 132, 167, 0.5);
 }
 
 button {
-  border-radius: 5px;
-  border: none;
-  font-weight: bold;
-  background-color: #60AFDF;
+  background: none;
+  border-radius: 9px;
+  border: 3px solid #03347c;
+  text-align: center;
+  padding: 8px;
   color: #000000;
-  height: 30px;
- }
+}
+
 /* -- PÁGINA 2 -- */
+#page2 {
+  margin-top: 50px;
+  position: relative;
+}
+
+#page2 img{
+  width: 100%;
+  height: 100%;
+}
+
+#page2 .contenedor{
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(255,255,255, 0.5);
+}
+
 select {
   border-radius: 5px;
- }
+}
 
 #name-sector {
+  margin-top: 10px;
+  padding: 5px;
   font-weight: bold;
   border-radius: 15px;
-  background-color: rgba(255,255,255, 0.8);
- }
+  background-color: rgba(117, 170, 231, 0.596);
+  font-size: 16px;
+}
 
 #list-indicator {
-  background-color: rgba(255,255,255, 0.8);
+  margin-top: 10px;
   border-radius: 15px;
- }
+  background-color: rgba(117, 170, 231, 0.596);
+  padding: 5px;
+}
 
-/* -- PÁGINA 3 -- */
+#list-indicator a:hover{
+  color: #000000;
+}
+
+/*-- PAGINA 3 --*/
+td {
+  border: 3px solid #03347c;
+}
+
+/* --   BUSCADOR -- */
+
+#page-buscador {
+  margin-top: 100px;
+  position: relative;
+}
+
+#page-buscador img{
+  width: 100%;
+  height: 100%;
+}
+
+#page-buscador .contenedor{
+  border-radius:15px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(197, 194, 194, 0.822);
+}
+
+
+
+/* -- PIE DE PAGINA --*/
+
+footer {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+.copy {
+  font-size: 20px;
+}
+
+/* RESPONSIVE */
+@media (min-width:1024px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: translatex(0%);
+    float: right;
+    display: flex;
+  }
+
+  .menu a {
+    border: none;
+  }
+
+  header label {
+    display: none;
+  }
+
+  .contenedor{
+    width:1000px;
+  }
+}
+
+@media (min-width:480px) {
+  #banner h2{
+    font-size: 40px;
+  }
+
+  #banner2{
+    height: 300px;
+    overflow: hidden;
+  }
+  #page2 img{
+    height: auto;
+    margin-top: -100px;
+  }
+
+  #name-sector{
+    font-size: 20px;
+  }
+
+}
